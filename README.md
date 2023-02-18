@@ -94,7 +94,7 @@ Answer: Actually it shows for few seconds, and even on YouTube they are not anim
     - No need of setup for Android & iOS
     - In `shadermask_with_shimmer.dart`, we can set shimmer loading effect with this widget.
     ```dart 
-        body: ShaderMask(
+        body: ShaderMask( 
           blendMode: BlendMode.color,
           shaderCallback: (bounds) => const LinearGradient(
             colors: [Colors.white24, Colors.grey],
