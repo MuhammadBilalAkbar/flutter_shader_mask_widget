@@ -92,8 +92,33 @@ Answer: Actually it shows for few seconds, and even on YouTube they are not anim
 1. Make a clean new project in flutter and inside a single screen add `text` in the `body` of `Scaffold`. Wrap that `text` widget with `ShaderMask` widget.
 2. For this video:
     - No need of setup for Android & iOS
-    - ShaderMask with `shaderCallback` type `LinearGradient`. `begin` and `end` properties declare the list of colors with beginning and end arrangement. `begin` is the offset at which stop 0.0 of the gradient is placed. `end` is the offset at which stop 1.0 of the gradient is placed.
+    - In `shadermask_with_shimmer.dart`, we can set shimmer loading effect with this widget.
     ```dart 
+        body: ShaderMask(
+          blendMode: BlendMode.color,
+          shaderCallback: (bounds) => const LinearGradient(
+            colors: [Colors.white24, Colors.grey],
+          ).createShader(bounds),
+          child: Column(
+            children: [
+              Container(height: 10, color: Colors.white),
+              const SizedBox(height: 100),
+              Container(height: 10, color: Colors.white),
+              const SizedBox(height: 10),
+              Container(height: 10, color: Colors.white),
+              const SizedBox(height: 10),
+              Container(height: 10, color: Colors.white),
+              const SizedBox(height: 10),
+              Container(height: 10, color: Colors.white),
+            ],
+          ),
+        ),
+    ```
+    Output: <br />
+    ![Screenshot](screenshots/LinearGradient.PNG)
+    - In `shadermask_with_image_text.dart`, 3 types:
+     - shaderMask with `shaderCallback` type `LinearGradient`. `begin` and `end` properties declare the list of colors with beginning and end arrangement. `begin` is the offset at which stop 0.0 of the gradient is placed. `end` is the offset at which stop 1.0 of the gradient is placed.
+     ```dart 
         body: Center(
           child: ShaderMask(
             blendMode: BlendMode.color,
@@ -111,11 +136,11 @@ Answer: Actually it shows for few seconds, and even on YouTube they are not anim
           ),
         ),
       );
-    ```
-    Output: <br />
-    ![Screenshot](screenshots/LinearGradient.PNG)
-    - ShaderMask with `shaderCallback` type `SweepGradient` using `pi` constant of `dart:math` library. `startAngle` is the angle in radians at which stop 0.0 of the gradient is placed. It defaults to 0.0. `endAngle` is the angle in radians at which stop 1.0 of the gradient is placed. It defaults to `math.pi * 2`. `transform` is GradientTransform that creates a sweep gradient.
-    ```dart 
+     ```
+     Output: <br />
+     ![Screenshot](screenshots/ShimmerLoadingEffect.PNG)
+     - ShaderMask with `shaderCallback` type `SweepGradient` using `pi` constant of `dart:math` library. `startAngle` is the angle in radians at which stop 0.0 of the gradient is placed. It defaults to 0.0. `endAngle` is the angle in radians at which stop 1.0 of the gradient is placed. It defaults to `math.pi * 2`. `transform` is GradientTransform that creates a sweep gradient.
+     ```dart 
         body: Center(
           child: ShaderMask(
             blendMode: BlendMode.color,
@@ -133,11 +158,11 @@ Answer: Actually it shows for few seconds, and even on YouTube they are not anim
           ),
         ),
       );
-    ```
-    Output: <br />
-    ![Screenshot](screenshots/SweepGradient.PNG)
-    - ShaderMask with `shaderCallback` type `RadialGradient`. `center` is the center of the gradient, as an offset into the (-1.0, -1.0) x (1.0, 1.0) square describing the gradient which will be mapped onto the paint box. For this case `center: Alignment.topLeft,`, alignment starts from topLeft side of box. `tileMode` is how this gradient should tile the plane beyond the outer ring at radius pixels from the center.
-    ```dart 
+     ```
+     Output: <br />
+     ![Screenshot](screenshots/SweepGradient.PNG)
+     - ShaderMask with `shaderCallback` type `RadialGradient`. `center` is the center of the gradient, as an offset into the (-1.0, -1.0) x (1.0, 1.0) square describing the gradient which will be mapped onto the paint box. For this case `center: Alignment.topLeft,`, alignment starts from topLeft side of box. `tileMode` is how this gradient should tile the plane beyond the outer ring at radius pixels from the center.
+     ```dart 
         body: Center(
           child: ShaderMask(
             blendMode: BlendMode.color,
@@ -155,6 +180,7 @@ Answer: Actually it shows for few seconds, and even on YouTube they are not anim
           ),
         ),
       );
-    ```
-    Output: <br />
-    ![Screenshot](screenshots/RadialGradient.PNG)
+     ```
+     Output: <br />
+     ![Screenshot](screenshots/RadialGradient.PNG)
+     - Text can be replaced with image as shown in code.
