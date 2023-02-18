@@ -156,5 +156,5 @@ Answer: Actually it shows for few seconds, and even on YouTube they are not anim
         ),
       );
     ```
-    Output:
+    Output: <br />
     ![Screenshot](screenshots/RadialGradient.PNG)
