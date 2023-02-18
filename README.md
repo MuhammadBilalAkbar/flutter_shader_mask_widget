@@ -115,7 +115,7 @@ Answer: Actually it shows for few seconds, and even on YouTube they are not anim
         ),
     ```
     Output: <br />
-    ![Screenshot](screenshots/LinearGradient.PNG)
+    ![Screenshot](screenshots/ShimmerLoadingEffect.PNG)
     - In `shadermask_with_image_text.dart`, 3 types:
      - shaderMask with `shaderCallback` type `LinearGradient`. `begin` and `end` properties declare the list of colors with beginning and end arrangement. `begin` is the offset at which stop 0.0 of the gradient is placed. `end` is the offset at which stop 1.0 of the gradient is placed.
      ```dart 
@@ -138,7 +138,7 @@ Answer: Actually it shows for few seconds, and even on YouTube they are not anim
       );
      ```
      Output: <br />
-     ![Screenshot](screenshots/ShimmerLoadingEffect.PNG)
+     ![Screenshot](screenshots/LinearGradient.PNG)
      - ShaderMask with `shaderCallback` type `SweepGradient` using `pi` constant of `dart:math` library. `startAngle` is the angle in radians at which stop 0.0 of the gradient is placed. It defaults to 0.0. `endAngle` is the angle in radians at which stop 1.0 of the gradient is placed. It defaults to `math.pi * 2`. `transform` is GradientTransform that creates a sweep gradient.
      ```dart 
         body: Center(
