@@ -61,11 +61,11 @@
 - It works similar to shimmer loading effect in Android (Kotlin) and iOS (Swift).
 
 **Problems from Videos**
-- Question: How to set image as shader using this widget?
+- Question: How to set image as shader using this widget? <br />
 Answer: Just replace the child of ShaderMask with Image widget.
-- Question: Is shimmer the shadow outline that appears while loading?
+- Question: Is shimmer the shadow outline that appears while loading? <br />
 Answer: Yes
-- Question: Widget isn't shimmering while loading?
+- Question: Widget isn't shimmering while loading? <br />
 Answer: Actually it shows for few seconds, and even on YouTube they are not animated shimmer effect!
 
 **Problems from Flutter Stackoverflow**
@@ -112,7 +112,7 @@ Answer: Actually it shows for few seconds, and even on YouTube they are not anim
         ),
       );
     ```
-    Output:
+    Output: <br />
     ![Screenshot](screenshots/LinearGradient.PNG)
     - ShaderMask with `shaderCallback` type `SweepGradient` using `pi` constant of `dart:math` library. `startAngle` is the angle in radians at which stop 0.0 of the gradient is placed. It defaults to 0.0. `endAngle` is the angle in radians at which stop 1.0 of the gradient is placed. It defaults to `math.pi * 2`. `transform` is GradientTransform that creates a sweep gradient.
     ```dart 
@@ -134,7 +134,7 @@ Answer: Actually it shows for few seconds, and even on YouTube they are not anim
         ),
       );
     ```
-    Output:
+    Output: <br />
     ![Screenshot](screenshots/SweepGradient.PNG)
     - ShaderMask with `shaderCallback` type `RadialGradient`. `center` is the center of the gradient, as an offset into the (-1.0, -1.0) x (1.0, 1.0) square describing the gradient which will be mapped onto the paint box. For this case `center: Alignment.topLeft,`, alignment starts from topLeft side of box. `tileMode` is how this gradient should tile the plane beyond the outer ring at radius pixels from the center.
     ```dart 
