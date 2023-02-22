@@ -116,34 +116,46 @@ Answer: Actually it shows for few seconds, and even on YouTube they are not anim
     ```
     Output: <br />
     ![Screenshot](screenshots/ShimmerLoadingEffect.PNG)
-    - In `shadermask_with_image_text.dart`, 3 types:
-     - shaderMask with `shaderCallback` type `LinearGradient`. `begin` and `end` properties declare the list of colors with beginning and end arrangement. `begin` is the offset at which stop 0.0 of the gradient is placed. `end` is the offset at which stop 1.0 of the gradient is placed.
+    - In folder/directory `shadermask_with_text_image`, there are 3 types of ShaderMask having different functions of `shaderCallback` property:
+     - In `shadermask_with_linear_gradient.dart`, `ShaderMask` with `shaderCallback` type `LinearGradient`. `begin` and `end` properties declare the list of colors with beginning and end arrangement. `begin` is the offset at which stop 0.0 of the gradient is placed. `end` is the offset at which stop 1.0 of the gradient is placed.
      ```dart 
         body: Center(
           child: ShaderMask(
-            blendMode: BlendMode.color,
+            // Show the source image, but only where the two images overlap.
+            blendMode: BlendMode.srcIn,
+            // Set the BlendMode to color for image and srcIn for text.
+            //Take the hue and saturation of the source image, and the luminosity of the destination image.
+            // blendMode: BlendMode.color,
             shaderCallback: (bounds) => const LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
               colors: [
-                Colors.red,
-                Colors.green,
-                Colors.blue,
+                Colors.yellow,
+                Colors.deepOrange,
               ],
             ).createShader(bounds),
 
-            child: const Text('I\'m burning the memories'),
+            /// Text
+            child: const Text('ShaderMask'),
+
+            /// Asset Image
+            // child: Image.asset(
+            //   'assets/image.jpg',
+            //   fit: BoxFit.fill,
+            //   height: double.infinity,
+            //   width: double.infinity,
+            // ),
           ),
         ),
-      );
      ```
      Output: <br />
      ![Screenshot](screenshots/LinearGradient.PNG)
-     - ShaderMask with `shaderCallback` type `SweepGradient` using `pi` constant of `dart:math` library. `startAngle` is the angle in radians at which stop 0.0 of the gradient is placed. It defaults to 0.0. `endAngle` is the angle in radians at which stop 1.0 of the gradient is placed. It defaults to `math.pi * 2`. `transform` is GradientTransform that creates a sweep gradient.
+     - In `shadermask_with_sweep_gradient.dart`, `ShaderMask` with `shaderCallback` type `SweepGradient` using `pi` constant of `dart:math` library. `startAngle` is the angle in radians at which stop 0.0 of the gradient is placed. It defaults to 0.0. `endAngle` is the angle in radians at which stop 1.0 of the gradient is placed. It defaults to `math.pi * 2`. `transform` is GradientTransform that creates a sweep gradient.
      ```dart 
         body: Center(
           child: ShaderMask(
-            blendMode: BlendMode.color,
+            // Set the BlendMode to color for image and srcIn for text.
+            blendMode: BlendMode.srcIn,
             shaderCallback: (bounds) => const SweepGradient(
               startAngle: 0,
               endAngle: math.pi / 4,
@@ -154,18 +166,27 @@ Answer: Actually it shows for few seconds, and even on YouTube they are not anim
               transform: GradientRotation(math.pi),
             ).createShader(bounds),
 
-            child: const Text('I\'m burning the memories'),
+            /// Text
+            child: const Text('ShaderMask'),
+
+            /// Asset Image
+            // child: Image.asset(
+            //   'assets/image.jpg',
+            //   fit: BoxFit.fill,
+            //   height: double.infinity,
+            //   width: double.infinity,
+            // ),
           ),
         ),
-      );
      ```
      Output: <br />
      ![Screenshot](screenshots/SweepGradient.PNG)
-     - ShaderMask with `shaderCallback` type `RadialGradient`. `center` is the center of the gradient, as an offset into the (-1.0, -1.0) x (1.0, 1.0) square describing the gradient which will be mapped onto the paint box. For this case `center: Alignment.topLeft,`, alignment starts from topLeft side of box. `tileMode` is how this gradient should tile the plane beyond the outer ring at radius pixels from the center.
+     - In `shadermask_with_radial_gradient.dart`, `ShaderMask` with `shaderCallback` type `RadialGradient`. `center` is the center of the gradient, as an offset into the (-1.0, -1.0) x (1.0, 1.0) square describing the gradient which will be mapped onto the paint box. For this case `center: Alignment.topLeft,`, alignment starts from topLeft side of box. `tileMode` is how this gradient should tile the plane beyond the outer ring at radius pixels from the center.
      ```dart 
         body: Center(
           child: ShaderMask(
-            blendMode: BlendMode.color,
+            // Set the BlendMode to color for image and srcIn for text.
+            blendMode: BlendMode.srcIn,
             shaderCallback: (bounds) => RadialGradient(
               center: Alignment.topLeft,
               radius: 0.2,
@@ -176,10 +197,18 @@ Answer: Actually it shows for few seconds, and even on YouTube they are not anim
               tileMode: TileMode.mirror,
             ).createShader(bounds),
 
-            child: const Text('I\'m burning the memories'),
+            /// Text
+            child: const Text('ShaderMask'),
+
+            /// Asset
+            // child: Image.asset(
+            //   'assets/image.jpg',
+            //   fit: BoxFit.fill,
+            //   height: double.infinity,
+            //   width: double.infinity,
+            // ),
           ),
         ),
-      );
      ```
      Output: <br />
      ![Screenshot](screenshots/RadialGradient.PNG)

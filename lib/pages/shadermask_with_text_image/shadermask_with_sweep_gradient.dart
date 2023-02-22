@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
-import '../../utils/widgets.dart';
-
 class ShaderMaskWithSweepGradient extends StatefulWidget {
   const ShaderMaskWithSweepGradient({Key? key, required this.title})
       : super(key: key);
@@ -36,10 +34,15 @@ class _ShaderMaskWithSweepGradientState
             ).createShader(bounds),
 
             /// Text
-            child: const TextWidget(),
+            child: const Text('ShaderMask'),
 
             /// Asset Image
-            // child: const AssetImageWidget(),
+            // child: Image.asset(
+            //   'assets/image.jpg',
+            //   fit: BoxFit.fill,
+            //   height: double.infinity,
+            //   width: double.infinity,
+            // ),
           ),
         ),
       );

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/widgets.dart';
-
 class ShaderMaskWithRadialGradient extends StatefulWidget {
   const ShaderMaskWithRadialGradient({Key? key, required this.title})
       : super(key: key);
@@ -35,10 +33,15 @@ class _ShaderMaskWithRadialGradientState
             ).createShader(bounds),
 
             /// Text
-            child: const TextWidget(),
+            child: const Text('ShaderMask'),
 
-            /// Asset Image
-            // child: const AssetImageWidget(),
+            /// Asset
+            // child: Image.asset(
+            //   'assets/image.jpg',
+            //   fit: BoxFit.fill,
+            //   height: double.infinity,
+            //   width: double.infinity,
+            // ),
           ),
         ),
       );

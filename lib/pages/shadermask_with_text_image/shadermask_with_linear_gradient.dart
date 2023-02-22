@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/widgets.dart';
-
 class ShaderMaskWithLinearGradient extends StatefulWidget {
   const ShaderMaskWithLinearGradient({Key? key, required this.title})
       : super(key: key);
@@ -37,10 +35,9 @@ class _ShaderMaskWithLinearGradientState
             ).createShader(bounds),
 
             /// Text
-            child: const TextWidget(),
+            child: const Text('ShaderMask'),
 
             /// Asset Image
-            // child: const AssetImageWidget(),
             // child: Image.asset(
             //   'assets/image.jpg',
             //   fit: BoxFit.fill,
