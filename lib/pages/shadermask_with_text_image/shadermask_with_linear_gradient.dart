@@ -21,7 +21,7 @@ class _ShaderMaskWithLinearGradientState
         body: Center(
           child: ShaderMask(
             // Show the source image, but only where the two images overlap.
-            blendMode: BlendMode.srcIn,
+            blendMode: BlendMode.color,
             // Set the BlendMode to color for image and srcIn for text.
             //Take the hue and saturation of the source image, and the luminosity of the destination image.
             // blendMode: BlendMode.color,
@@ -30,20 +30,21 @@ class _ShaderMaskWithLinearGradientState
               end: Alignment.bottomCenter,
               colors: [
                 Colors.yellow,
-                Colors.deepOrange,
+                Colors.greenAccent,
+                Colors.red,
               ],
             ).createShader(bounds),
 
             /// Text
-            child: const Text('ShaderMask'),
+            // child: const Text('I\'m burning the memories'),
 
             /// Asset Image
-            // child: Image.asset(
-            //   'assets/image.jpg',
-            //   fit: BoxFit.fill,
-            //   height: double.infinity,
-            //   width: double.infinity,
-            // ),
+            child: Image.asset(
+              'assets/image.jpg',
+              fit: BoxFit.fill,
+              height: double.infinity,
+              width: double.infinity,
+            ),
           ),
         ),
       );

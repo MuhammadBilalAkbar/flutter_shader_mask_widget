@@ -20,8 +20,8 @@ class _ShaderMaskWithRadialGradientState
         ),
         body: Center(
           child: ShaderMask(
-            // Set the BlendMode to color for image and srcIn for text.
-            blendMode: BlendMode.srcIn,
+            // Set the BlendMode to color for image and srcIn for text to see the beautiful animation.
+            blendMode: BlendMode.color,
             shaderCallback: (bounds) => RadialGradient(
               center: Alignment.topLeft,
               radius: 0.2,
@@ -33,7 +33,7 @@ class _ShaderMaskWithRadialGradientState
             ).createShader(bounds),
 
             /// Text
-            child: const Text('ShaderMask'),
+            child: const Text('I\'m burning the memories'),
 
             /// Asset
             // child: Image.asset(

@@ -21,8 +21,8 @@ class _ShaderMaskWithSweepGradientState
         ),
         body: Center(
           child: ShaderMask(
-            // Set the BlendMode to color for image and srcIn for text.
-            blendMode: BlendMode.srcIn,
+            // Set the BlendMode to color for image and srcIn for text to see the beautiful animation.
+            blendMode: BlendMode.color,
             shaderCallback: (bounds) => const SweepGradient(
               startAngle: 0,
               endAngle: math.pi / 4,
@@ -34,7 +34,7 @@ class _ShaderMaskWithSweepGradientState
             ).createShader(bounds),
 
             /// Text
-            child: const Text('ShaderMask'),
+            child: const Text('I\'m burning the memories'),
 
             /// Asset Image
             // child: Image.asset(

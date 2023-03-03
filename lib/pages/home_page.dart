@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shader_mask_widget/pages/shadermask_with_shimmer.dart';
 
 import '../utils/constants.dart';
 import 'shadermask_with_text_image/shadermask_with_linear_gradient.dart';
@@ -59,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ShaderMaskWithSweepGradient(
+                    builder: (context) => const ShaderMaskWithShimmer(
                         title: 'ShaderMask with Shimmer'),
                   ),
                 ),

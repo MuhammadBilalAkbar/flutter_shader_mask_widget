@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
           ),
           textTheme: const TextTheme(
             bodyMedium: TextStyle(
-              fontSize: 60.0,
+              fontSize: 80.0,
               fontWeight: FontWeight.bold,
             ),
             labelLarge: TextStyle(fontSize: 24.0),
