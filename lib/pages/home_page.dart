@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                   MaterialPageRoute(
                     builder: (context) => const ShaderMaskWithShimmer(
                         title: 'ShaderMask with Shimmer'),
-                  ),
+                   ),
                 ),
                 child: const Text('ShaderMask with Shimmer'),
               ),
